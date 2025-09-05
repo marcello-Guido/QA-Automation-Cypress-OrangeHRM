@@ -38,9 +38,6 @@ describe('Orange HRM Tests', () => {
     cy.get('.oxd-radio-wrapper').eq(1).click()
     cy.get('[type="submit"]').eq(0).click()
     cy.get('.oxd-text--toast-title').should('contain', 'Success')
-
-
-
   })
 
   it('Login - Fail', () => {
