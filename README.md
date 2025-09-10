@@ -62,5 +62,17 @@ git push -u origin main
 ```
 8) Updates to commit
 ```bash
-git push -u origin main
+git status
+git add .
+git commit -m "Message"
+git push
 ```
+9) Git ignore to ignore some files to push
+    - Need to create a new file .gitignore
+    - Put the name of the files that want to ignore 
+    - Remove the files that already was pushed before
+```bash
+git rm  -r --cached ./node_modules/
+git rm --cached package-lock.json
+```
+    - Back to the Updates commit
