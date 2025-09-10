@@ -71,8 +71,19 @@ git push
     - Need to create a new file .gitignore
     - Put the name of the files that want to ignore 
     - Remove the files that already was pushed before
+    - Back to the Updates commit
 ```bash
 git rm  -r --cached ./node_modules/
 git rm --cached package-lock.json
 ```
-    - Back to the Updates commit
+10) Using ready projects
+    - Go to the repository of the project and fork
+    - In your git bash create new file to save
+    - Create a new branch ans select this new branch
+```bash
+git clone ...link repository...
+git branch name-branch
+git checkout name-branch
+```
+
+        
