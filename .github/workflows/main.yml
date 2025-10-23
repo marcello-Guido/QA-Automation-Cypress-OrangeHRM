@@ -1,6 +1,5 @@
 name: Cypress Tests CI
 
-# Quando rodar
 on:
   push:
     branches: [ main ]
@@ -11,29 +10,16 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      # 1️⃣ Pega o código do repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Configura Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      # 3️⃣ Instala dependências
       - name: Install dependencies
         run: npm install
 
-      # 4️⃣ Instala Cypress globalmente (opcional)
-      - name: Install Cypress globally
-        run: npm install -g cypress
-
-      # 5️⃣ Executa todos os testes
-      - name: Run Cypress tests
-        run: npx cypress run
-
-      # 6️⃣ Publica relatório de testes simples
-      - name: Show Cypress report
-        run: |
-          echo "Testes executados com sucesso!"
+      - name: Run Cypress headless
+        run: npx cypress run --browser chrome --headless
